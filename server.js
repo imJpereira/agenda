@@ -9,7 +9,7 @@ mongoose.connect(process.env.CONNECTIONSTRING)  //retorna uma promise
     .then(() => {
         app.emit('pronto');
     })
-    .catch((err) => alert('Erro na conexão com o Banco de Dados.'));
+    .catch((err) => console.log('Erro na conexão com o Banco de Dados.'));
 
 //CRIA SESSION E FLASH MESSAGES
 const session = require('express-session');

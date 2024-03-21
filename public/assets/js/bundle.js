@@ -21,28 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body {
-    background: #c1c1c1;
-    font-family: sans-serif;
-}
-
-.main__container {
-    background-color: #fff;
-    margin: 10rem auto;
-    width: 40rem;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-form {
-    margin-top: 2rem;
-    font-size: 20px;
-
-    & input, button{
-        padding: 5px;
-        font-size: 20px;
-    };
-}`, "",{"version":3,"sources":["webpack://./frontend/assets/css/styles.css"],"names":[],"mappings":"AAAA;IACI,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI,sBAAsB;IACtB,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,gBAAgB;IAChB,eAAe;;IAEf;QACI,YAAY;QACZ,eAAe;IACnB,CAAA;AACJ","sourcesContent":["body {\r\n    background: #c1c1c1;\r\n    font-family: sans-serif;\r\n}\r\n\r\n.main__container {\r\n    background-color: #fff;\r\n    margin: 10rem auto;\r\n    width: 40rem;\r\n    padding: 20px;\r\n    border-radius: 10px;\r\n}\r\n\r\nform {\r\n    margin-top: 2rem;\r\n    font-size: 20px;\r\n\r\n    & input, button{\r\n        padding: 5px;\r\n        font-size: 20px;\r\n    };\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ``, "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
