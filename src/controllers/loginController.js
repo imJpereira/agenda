@@ -43,7 +43,7 @@ exports.signIn = async (req, res) => {
         req.flash('success', 'Você entrou no sitema.');
         req.session.user = login.user;
         req.session.save(() => {
-            return res.redirect("back")
+            return res.redirect('/')
         });
 
     } catch (e) {
