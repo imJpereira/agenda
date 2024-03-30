@@ -23,11 +23,19 @@ class Contact {
         return await ContactModel.findById(id);
     }
 
-    async register() {
+    async create() {
         this.validate()
         if (this.errors.length > 0) return;
 
         this.contact = await ContactModel.create(this.body);
+    }
+
+    async edit(id) {
+        if (typeof id !== 'string') return;
+        this.validate();
+        if(this.errors.length > 0) return;
+
+        this.contact = await ContactModel.findByIdAndUpdate(id, this.body, { new: true });
     }
 
     validate() {
