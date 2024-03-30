@@ -1,5 +1,3 @@
-const HomeModel = require('../models/HomeModel');
-
-exports.getIndex = (req, res) => {
+exports.index = (req, res) => {
     res.render('index');
 };

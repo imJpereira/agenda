@@ -7,4 +7,5 @@ Esse aplicativo web possui uma página de cadastro, onde você pode cadastrar um
 
 ## Notas importantes
 * A segurança da senha é feita pelo bcrypt, ou seja, a sua senha não aparece na base de dados
+
 * Esse projeto visa desenvolver minhas habilidades com nodeJS, então sinta-se a vontade para apontar possíveis melhorias no código.

@@ -18,7 +18,7 @@ const flash = require('connect-flash');
 const routes = require('./routes');
 const path = require('path');
 const csrf = require('csurf');
-const { checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
+const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
 
 //CONFIGURA REQ.BODY
 app.use(express.urlencoded({ extended: true }));
@@ -47,6 +47,7 @@ app.set('view engine', 'ejs');
 
 //MIDDLEWARE GLOBAL E ROUTES
 app.use(csrf());
+app.use(middlewareGlobal);
 app.use(checkCsrfError);
 app.use(csrfMiddleware);
 app.use(routes);
