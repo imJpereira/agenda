@@ -12,33 +12,39 @@
 
                 <%- include('includes/messages') %>
 
-                <div class="responsive-table">
-                    <table class="table my-3">
-                        <tr>
-                            <td>A</td>
-                            <td>B</td>
-                            <td>C</td>
-                            <td>D</td>
-                        </tr>
-                        <tr>
-                            <td>A</td>
-                            <td>B</td>
-                            <td>C</td>
-                            <td>D</td>
-                        </tr>
-                        <tr>
-                            <td>A</td>
-                            <td>B</td>
-                            <td>C</td>
-                            <td>D</td>
-                        </tr>
-                    </table>
+                <% if (contacts.length > 0) { %>
+
+                    <div class="responsive-table">
+                        <table class="table my-3">
+                            <tr class="font-weight-bold">
+                                <th>Nome</th>
+                                <th>Sobrenome</th>
+                                <th>Email</th>
+                                <th>Telefone</th>
+                            </tr>
+                            <% contacts.forEach(contact => { %>
+                                <tr>
+                                    <td class="mt-3 py-3"><%= contact.name %></td>
+                                    <td class="mt-3 py-3"><%= contact.surname %></td>
+                                    <td class="mt-3 py-3"><%= contact.email %></td>
+                                    <td class="mt-3 py-3"><%= contact.tel %></td>
+                                    <td class="mt-3 py-3"><a href="/contato/<%= contact._id %>">Editar</a></td>
+                                    <td class="mt-3 py-3"><a class="text-danger" href="/contato/delete/<%= contact._id %>">Excluir</a></td>
+                                </tr>
+                                <% }); %>
+                            </table>
+                        </div>
+                        
+                    <% } else { %>
+                            
+                            <h3 class="text-center mt-5">Você ainda não possui contatos!</h3>
+                    
+                    <% } %>
+                    
                 </div>
-
+                
+                <div class="col-lg-2"></div>
             </div>
-
-            <div class="col-lg-2"></div>
         </div>
-    </div>
 
 <%- include('includes/footer') %>

@@ -18,11 +18,6 @@ class Contact {
         this.contact = null;
     }
 
-    static async searchID(id) {
-        if (typeof id !== 'string') return;
-        return await ContactModel.findById(id);
-    }
-
     async create() {
         this.validate()
         if (this.errors.length > 0) return;
@@ -61,6 +56,26 @@ class Contact {
             }
         }
     }
+
+    //MÉTODOS ESTÁTICOS
+    
+    static async searchID(id) {
+        if (typeof id !== 'string') return;
+        return await ContactModel.findById(id);
+    }
+
+    static async searchContacts() {
+        const contact = await ContactModel.find()
+        .sort({ date: -1 });
+        return contact
+    }
+
+    static async delete(id) {
+        if (typeof id !== 'string') return;
+        const contact = ContactModel.findByIdAndDelete({ _id: id });
+        return contact;
+    }
+
 }
 
 module.exports = Contact;

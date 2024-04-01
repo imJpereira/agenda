@@ -27,7 +27,7 @@ exports.create = async (req, res) => {
 
 };
 
-exports.editIndex = async (req, res) => {
+exports.getIndex = async (req, res) => {
     if (!req.params.id) return res.render('404');
 
     const contact = await Contact.searchID(req.params.id);
@@ -58,3 +58,20 @@ exports.editContact = async (req, res) => {
         console.log(e);
     }
 }   
+
+exports.delete = async (req, res) => {
+    try {
+        if(!req.params.id) return res.render('404');
+        
+        const contact = Contact.delete(req.params.id);
+        if(!contact) return res.render('404');
+
+        req.flash('success', 'Contato excluído');
+        req.session.save(() => res.redirect('/'));
+        return;
+
+    } catch (e) {
+        res.render('404');
+        console.log(e);
+    } 
+};
