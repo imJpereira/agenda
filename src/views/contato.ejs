@@ -13,29 +13,32 @@
                 <%- include('includes/messages') %>
 
                 <% if (contact._id) { %>
-                    <form action="/contato/edit/<%= contact._id %>" method="POST">
+                    <form class="contact" action="/contato/edit/<%= contact._id %>" method="POST">
                 <% } else { %>
-                    <form action="/contato/register" method="POST">
+                    <form class="contact" action="/contato/register" method="POST">
                 <% } %>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="form-group">
+                          <label>Nome: <span class="name"></span></label>
+                          <input value="<%= contact.name %>" type="text" class="form-control mb-3" placeholder="Nome" name="name">
 
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                    <div class="form-group">
-                      <label>Nome: </label>
-                      <input value="<%= contact.name %>" type="text" class="form-control" placeholder="Nome" name="name">
-                      <label>Sobrenome: </label>
-                      <input value="<%= contact.surname %>" type="text" class="form-control" placeholder="Sobrenome" name="surname">
-                      <label>Email: </label>
-                      <input value="<%= contact.email %>" type="email" class="form-control" placeholder="Email" name="email">
-                      <label>Telefone: </label>
-                      <input value="<%= contact.tel %>" type="tel" class="form-control" placeholder="Telefone" name="tel">
-                    </div>
-                    <% if (contact._id) { %>
-                        <button type="submit" class="btn btn-primary">Editar contato</button> 
-                    <% } else { %>
-                        <button type="submit" class="btn btn-primary">Atualizar contato</button>
-                    <% } %>
+                          <label>Sobrenome: </label>
+                          <input value="<%= contact.surname %>" type="text" class="form-control mb-3" placeholder="Sobrenome" name="surname">
+
+                          <label>Email: <span class="email"></span></label>
+                          <input value="<%= contact.email %>" type="email" class="form-control mb-3" placeholder="Email" name="email">
+
+                          <label>Telefone: <span class="tel"></span></label>
+                          <input value="<%= contact.tel %>" type="tel" class="form-control mb-3" placeholder="Telefone" name="tel">
+
+                        </div>
+                        <% if (contact._id) { %>
+                            <button type="submit" class="btn btn-primary">Atualizar contato</button> 
+                        <% } else { %>
+                            <button type="submit" class="btn btn-primary">Criar contato</button>
+                        <% } %>
                     </form>
-            </div>
+            </div>  
 
             <div class="col-lg-2"></div>
         </div>

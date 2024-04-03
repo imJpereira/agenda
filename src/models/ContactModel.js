@@ -37,8 +37,8 @@ class Contact {
         this.cleanUp();
         
         if (!this.body.name) this.errors.push('O contato precisa ter um nome');
-        if (this.body.email && !validator.isEmail(this.body.email)) this.errors.push('E-mail inválido'); 
-        if (!this.body.email && !this.body.tel) this.errors.push('O contato precisa ter um email ou um número');
+        if (this.body.email && !validator.isEmail(this.body.email)) this.errors.push('Email inválido'); 
+        if (!this.body.email && !this.body.tel) this.errors.push('O contato precisa ter um Email ou um número');
         
     }
 

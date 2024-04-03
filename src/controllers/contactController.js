@@ -1,4 +1,3 @@
-const { reset } = require('nodemon');
 const Contact = require('../models/ContactModel');
 
 exports.index = (req, res) => {
@@ -19,7 +18,7 @@ exports.create = async (req, res) => {
         }
         
         req.flash('success', 'Contato criado com sucesso');
-        req.session.save(() => res.redirect(`/contato/${contact.contact._id}`));
+        req.session.save(() => res.redirect('/'));
     } catch (e) {
         console.log(e);
         res.render('404');
@@ -51,7 +50,6 @@ exports.editContact = async (req, res) => {
 
         req.flash('success', 'Contato editado com sucesso');
         req.session.save(() => res.redirect('/'))
-
 
     } catch (e) {
         res.render('404');
