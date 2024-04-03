@@ -5,6 +5,9 @@ Este é um programa de cadastro de usuários desenvolvido para aprimorar minhas 
 ## Como funciona
 Esse aplicativo web possui uma página de cadastro, onde você pode cadastrar uma nova conta, ou fazer login caso você já tenha uma conta. Todos os usuários cadastrados são mostrados em uma lista, porém, só usuários logados podem ver essa lista. É um projeto frontend e backend, com foco no backend, utilizando Express.
 
+## Como utilizar
+Essa aplicação só funciona no localhost. Por enquanto ela ainda não está disponível para testes públicos por motivos de segurança.
+
 ## Notas importantes
 * A segurança da senha é feita pelo bcrypt, ou seja, a sua senha não aparece na base de dados
 
